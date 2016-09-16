@@ -143,7 +143,7 @@ export default class ReactMap extends Component {
       <div>
       <SearchBar setMarkers={this.setMarkers} cities={this.state.cities}/>
       <div className='overallContainer'>
-      <UserHome selected={this.state.selectedPlace} username={this.state.username} LogOutUser={this.LogOutUser}/>
+      <UserHome selected={this.state.selectedPlace} username={this.state.username} LogOutUser={this.LogOutUser} setMarkers={this.setMarkers} markers={this.state.markers}/>
       <GoogleMapLoader
         query={{ libraries: "geometry,drawing,places,visualization" }}
         containerElement={
