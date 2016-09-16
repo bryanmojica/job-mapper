@@ -41,21 +41,22 @@ export default class SearchBar extends Component {
           };
           markers.push(marker);
         });
-        console.log('fetching')
+        console.log('fetching');
         this.props.setMarkers(markers);
       });
     }).catch((error) => {
       console.log('There has been a problem with your fetch operation: ' + error.message);
     });
+    Materialize.toast('Fetching jobs!', 1000, 'rounded green');
   }
 
   handleJobSearch(e) {
     this.setState({currentJob: e.target.value});
-    console.log('jobbing')
+    console.log('jobbing');
   }
 
   handleCitySearch(e) {
-    console.log('searching')
+    console.log('searching');
     this.setState({currentCity: e.target.value});
   }
 
@@ -64,13 +65,13 @@ export default class SearchBar extends Component {
       <div id='search-bar'>
         <h1>JobMapper</h1>
         <div className='search-div'>
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form onSubmit={this.handleSubmit.bind(this)} >
             <input className='search-box' type="text" name="job" value={this.state.currentJob} placeholder='Search Job
-            ' onChange={this.handleJobSearch}/>
+            ' onChange={this.handleJobSearch} />
           </form>
         </div>
         <div className='geoSelector'>
-          <GeoSelector />
+          <GeoSelector cities={this.props.cities}/>
         </div>
         {/* <div className='searchLabel'>
         City:<input type="text" name="city" value={this.state.currentCity} onChange={this.handleCitySearch} />
