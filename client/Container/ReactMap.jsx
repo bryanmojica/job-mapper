@@ -52,6 +52,7 @@ export default class ReactMap extends Component {
     let options = {
       method: 'GET',
     };
+
     var cities = [];
     
     $.ajax({
@@ -62,8 +63,6 @@ export default class ReactMap extends Component {
         this.setState({cities: JSON.parse(data)});
       }.bind(this)
     });
-    
-
   }
 
 
@@ -173,8 +172,6 @@ export default class ReactMap extends Component {
       </InfoWindow>
       );
   }
-
-
 
   render() {
     return (

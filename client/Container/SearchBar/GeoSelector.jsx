@@ -20,6 +20,7 @@ class GeoSelector extends React.Component {
     let cities = this.props.cities;
     return (
       <div className="GeoSelectContainer"> 
+
           <select value={this.state.value} onChange={this.handleSelection.bind(this)}>
             {cities.map((city) => 
                <option id={city} value={city}>{city}</option>               
